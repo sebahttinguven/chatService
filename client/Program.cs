@@ -32,8 +32,7 @@ namespace client
                         Console.WriteLine("Server closed connection.");
                         return;
                     }
-
-                    List<byte> respBytesList = new List<byte>(response);
+                                        List<byte> respBytesList = new List<byte>(response);
                     respBytesList.RemoveRange(received, maxMessageSize - received); // truncate zero end
                     Console.WriteLine("Server: " + Encoding.ASCII.GetString(respBytesList.ToArray()));
 
